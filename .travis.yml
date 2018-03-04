@@ -1,0 +1,40 @@
+language: rust
+rust:
+   - stable
+   - beta
+   - nightly
+
+matrix:
+  allow_failures:
+    -rust: nightly
+
+
+env:
+  global:
+    - TARGET=x86_64-unknown-linux-gnu
+    - CUDA_ROOT="$HOME/cuda"
+  matrix:
+    - CUDA=80
+    - CUDA=91
+
+before_install: true
+
+install:
+  - ci/install.sh
+
+script:
+  - ci/script.sh
+
+after_script: true
+
+cache: cargo
+
+branches:
+  only:
+    - auto
+    - master
+    - try
+
+notifications:
+  email:
+on_success: never
