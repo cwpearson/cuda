@@ -1,0 +1,12 @@
+[package]
+name = "cuda"
+version = "0.1.0"
+authors = ["Carl Pearson <carl.w.pearson@gmail.com>"]
+build = "build.rs"
+links = "cudart"
+
+[dependencies]
+libc = "0.2"
+
+[build-dependencies]
+bindgen = "0.26.3"
