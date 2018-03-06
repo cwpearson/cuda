@@ -6,22 +6,18 @@ addons:
     - curl
 
 
-matrix:
-  allow_failures:
-    -rust: nightly
-
-
 env:
   global:
     - TARGET=x86_64-unknown-linux-gnu
     - CUDA_ROOT="$HOME/cuda"
     - PATH="$HOME/.cargo/bin:$PATH"
   matrix:
-    - CUDA=80
-    - CUDA=91
-    - RUST=stable
-    - RUST=beta
-    - RUST=nightly
+    - CUDA=80 RUST=stable
+    - CUDA=91 RUST=stable
+    - CUDA=80 RUST=beta
+    - CUDA=91 RUST=beta
+    - CUDA=80 RUST=nightly
+    - CUDA=91 RUST=nightly
 
 before_install:
   - ci/before_install.sh
