@@ -2,5 +2,5 @@
 
 set -exu -o pipefail
 
-curl https://sh.rustup.rs -sSf | sh -s -- --no-modify-path --default-toolchain $RUST
+curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain $RUST
 df -h
