@@ -17,4 +17,5 @@ fi
 wget -O cuda.run "$CUDA_URL"
 chmod +x cuda.run
 ./cuda.run --toolkit --silent --toolkitpath="$CUDA_ROOT"
+rm -v cuda.run
 
