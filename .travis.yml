@@ -29,7 +29,7 @@ script:
   - ci/script.sh
 
 after_script:
-  -ci/after_script.sh
+  - ci/after_script.sh
 
 cache: cargo
 
