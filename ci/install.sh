@@ -2,6 +2,8 @@
 
 set -exu -o pipefail
 
+df -h
+
 rustup component add rustfmt-preview
 cargo install --force bindgen
 
